@@ -1,0 +1,74 @@
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.control-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.control-btn {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.control-btn:hover {
+  background-color: #45a049;
+}
+
+.control-btn.play-pause {
+  background-color: #2196F3;
+  padding: 10px 20px;
+}
+
+.control-btn.play-pause:hover {
+  background-color: #1976D2;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.time {
+  font-size: 12px;
+  color: #666;
+  min-width: 40px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 4px;
+  background-color: #ddd;
+  outline: none;
+  cursor: pointer;
+}
+
+.progress-bar::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.progress-bar::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}

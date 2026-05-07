@@ -1,0 +1,205 @@
+/* Spotify-inspired theme variables */
+:root {
+  --bg-primary: #121212;
+  --bg-secondary: #181818;
+  --bg-tertiary: #282828;
+  --bg-elevated: #282828;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-tertiary: #a7a7a7;
+  --accent-green: #1db954;
+  --accent-green-hover: #1ed760;
+  --accent-green-active: #1aa34a;
+  --border-subtle: #2a2a2a;
+  --shadow-elevated: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Custom animations and transitions */
+* {
+  transition: all 0.2s ease;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Button hover effects */
+.btn-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-hover:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Progress bar animation */
+.progress-animated {
+  transition: width 0.3s ease;
+}
+
+/* Fade-in animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.fade-in-delay {
+  animation: fadeIn 0.5s ease-in-out 0.1s both;
+}
+
+/* Pulse animation for buttons */
+.pulse-once {
+  animation: pulse 0.3s ease-in-out;
+}
+
+/* Scale animation */
+.scale-in {
+  animation: scaleIn 0.2s ease-out;
+}
+
+/* Custom keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Player specific animations */
+.player-control-btn {
+  transition: all 0.2s ease;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.player-control-btn:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+  border-color: var(--border-subtle);
+}
+
+.player-control-btn:active {
+  transform: scale(0.95);
+  border-color: var(--accent-green);
+}
+
+/* Song card animations */
+.song-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.song-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.song-card:hover .play-overlay {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Volume slider animations */
+.volume-slider-thumb {
+  transition: all 0.2s ease;
+}
+
+.volume-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Progress bar animations */
+.progress-bar-fill {
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.progress-bar-container:hover .progress-bar-fill {
+  background-color: #1ed760;
+}
+
+/* Navbar animations */
+.navbar-link {
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #1db954;
+  transition: width 0.3s ease;
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+/* Loading animations */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Staggered fade-in for lists */
+.stagger-fade-in > * {
+  animation: fadeIn 0.5s ease-out both;
+}
+
+.stagger-fade-in > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-fade-in > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-fade-in > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-fade-in > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-fade-in > *:nth-child(5) { animation-delay: 0.5s; }
